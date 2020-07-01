@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>using constuctor function</title>
+    </head>
+
+    <body>
+        <button onclick="constructorFunction();">constructor function</button>
+
+        <script>
+            'use strict';
+            function Product(id, name, cost, price) {
+                this.id = id;
+                this.name = name;
+                this.standardcost = cost;
+                this.listPrice = price;
+
+                this.grossProfit = () => {
+                    return (this.listPrice - this.standardcost).toLocaleString("en-US", {
+                        style: 'currency', currency: 'USD'
+                    });
+                };
+            }
+
+            function constructorFunction() {
+                let prod1 = new Product(123, "prod1", 342, 500);
+                let prod2 = new Product(124, "prod2", 345, 600);
+
+                console.log(prod1.grossProfit());
+                console.log(prod2.grossProfit());
+            }
+
+        </script>
+    </body>
+</html>

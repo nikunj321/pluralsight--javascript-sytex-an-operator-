@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            object literals
+        </title>
+    </head>
+
+    <body>
+        <button onclick="objectLiterals();">object literals</button>
+
+        <script>
+            'use strict';
+
+            function objectLiterals() {
+                let product = {
+                    "projectID" : 3445,
+                    "name" : "obejct literals",
+                    "standardcost" : 1056.56,
+                    "listPrice" : 1456.67,
+                    grossProfit : function() {
+                        return (this.listPrice - this.standardcost).toLocaleString('en-US', {
+                            style: 'currency', currency: 'USD'
+                        });
+                    }
+                };
+                
+                let prod2 = {
+                    "standardcost" : 2323.34,
+                    "listPrice" : 3423.32
+                };
+
+                // call using reference to 'product' properties
+                console.log(product.grossProfit.call(product));
+                // call using reference to 'prod2' properties
+                console.log(product.grossProfit.call(prod2));
+                console.log("");
+                console.log(product.grossProfit.apply(product));
+                console.log(product.grossProfit.apply(prod2));
+
+                
+            }
+        </script>
+    </body>
+</html>

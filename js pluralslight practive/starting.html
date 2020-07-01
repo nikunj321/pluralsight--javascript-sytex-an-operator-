@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Switch statement sample</title>
+</head>
+
+<body>
+    <button onclick="simpleSwitch();">Simple switch sample</button>
+    <button onclick="multipleCase();">forget a Break </button>
+    <button onclick="blockLevelScope();">Block level scope</button>
+    <script>
+        
+        function blockLevelScope() {
+            let productid = 2;
+
+            switch(productid) {
+                // every "message" have diffrent scope
+                case 1: {
+                    let message = "this is case 1";
+                    console.log(message);
+                    break;
+                }
+                case 2: {
+                    let message = "this is case 2";
+                    console.log(message);
+                    break;
+                }
+                default: {
+                    let message = "this is default message";
+                    console.log(message);
+                    break;
+                }
+            }
+        }
+
+        function multipleCase() {
+            let color = "dark blue";
+
+            switch (color) {
+                case "red":
+                case "pink":
+                    console.log("this is a red color");
+                    break;
+                case "blue":
+                case "light Blue":
+                case "dark blue":
+                    console.log("this is a blue color");
+                    break;
+                default:
+                    console.log("invalid color select");
+                    break;
+            }
+        }
+
+
+        function simpleSwitch() {
+            let productid = 2;
+
+            switch (productid) {
+                case 1:
+                    console.log("product 1");
+                    break; // if we forget the "break" it follows through the next case and cosole.log both the statement
+                case 2:    // i.e., "product   1" /n "productid 2"
+                    console.log("productid 2");
+                    break;
+                default:// default can be anywhere 
+                    console.log("unknown productid");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

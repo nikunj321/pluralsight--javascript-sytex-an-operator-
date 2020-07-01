@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>for/of sample</title>
+    </head>
+
+    <body>
+        <button onclick="forofsample();">for/of</button>
+        <button onclick="loopstringsample();">loop string sample</button>
+        <script>
+            'use strict';
+
+            //looping over a string
+            function loopstringsample() {
+                let productName = " looping over string - 23";
+                let letters = "";
+
+                for (const char of productName) {
+                    letters += char;
+                }
+                console.log(letters);
+            }
+
+            // for/of sample
+            let product = [
+                {
+                    "productID": 234,
+                    "name" : "FOR / OF SAMPLE",
+                    "pruductNumber" : "FD-34-345",
+                    "color" : "black"
+                },
+                {
+                    "productID": 235,
+                    "name" : "FOR / OF SAMPLE",
+                    "pruductNumber" : "FD-34-345",
+                    "color" : "black"
+                },
+                {
+                    "productID": 236,
+                    "name" : "FOR / OF SAMPLE",
+                    "pruductNumber" : "FD-34-345",
+                    "color" : "black" 
+                }
+            ];
+
+            // usiing for/ of loop
+            function forofsample() {
+                for ( const item of product) {
+                    console.log(JSON.stringify(item));
+                }
+            }
+
+        </script>
+    </body>
+</html>

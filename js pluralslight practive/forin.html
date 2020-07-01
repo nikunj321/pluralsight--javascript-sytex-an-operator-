@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>use case of " for/in " statement</title>
+    </head>
+
+    <body>
+        <button onclick="forinSample();">for/in sample</button>
+
+        <script>
+            'use strict';
+
+            //using for/in loop
+            function forinSample() {
+                let product = {
+                    "productID" : 234,
+                    "name" : "for/in sample example",
+                    "productNumber" : "FB-23-234",
+                    "color" : "black",
+                    "standardcost" : 1056.45,
+                    "listPrice" : 1437.78,
+                    calculateGrossProfit: function() {
+                        return this.listPrice - this.standardcost;
+                    }
+                };
+
+                for (const key in product) {
+                    console.log("'" + key + "'=" + product[key]);
+                }
+            }
+        </script>
+    </body>
+</html>
